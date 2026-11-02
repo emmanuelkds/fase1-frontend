@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPAP - Materia</title>
+    <link rel="icon" href="img/ipap-favicon-32.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        @theme {
+            --color-barra: #0d3b52;
+            --color-verde: #1a8f5e;
+            --color-texto: #24313a;
+            --color-fondo: #f4f6f7;
+            --color-muted: #5b6b75;
+            --font-sans: "Roboto", sans-serif;
+        }
+    </style>
+</head>
+
+<body class="flex min-h-screen flex-col bg-fondo font-sans text-texto">
+    <header class="bg-barra shadow-md">
+        <div class="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-4 sm:px-6 lg:flex-row lg:items-center">
+            <div class="flex items-center justify-between gap-4 lg:contents">
+                <img src="img/ipap-logo-portal-alumno-claro.png" alt="IPAP portal del alumno" class="h-12 w-auto sm:h-16">
+                <button type="button" id="abrir-notificaciones"
+                    class="relative order-last flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-xl text-white hover:bg-verde">
+                    <i class="ti ti-bell"></i>
+                    <span class="absolute -top-1 -right-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-verde px-1 text-xs font-bold text-white">2</span>
+                </button>
+            </div>
+            <nav class="lg:ml-auto">
+                <ul class="flex flex-col gap-2 text-center lg:flex-row">
+                    <li><a href="inicio.html" class="block rounded-lg bg-white/10 hover:bg-white/20 px-3 py-2 text-sm text-white">Inicio</a></li>
+                    <li><a href="perfil.html" class="block rounded-lg bg-white/10 hover:bg-white/20 px-3 py-2 text-sm text-white">Alumno / Perfil</a></li>
+                    <li><a href="materias.html" class="block rounded-lg bg-verde font-semibold px-3 py-2 text-sm text-white">Materias</a></li>
+                    <li><a href="tramites.html" class="block rounded-lg bg-white/10 hover:bg-white/20 px-3 py-2 text-sm text-white">Trámites y consultas</a></li>
+                    <li><a href="mensajes.html" class="block rounded-lg bg-white/10 hover:bg-white/20 px-3 py-2 text-sm text-white">Mensajes</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="mx-auto w-full min-w-0 max-w-6xl flex-1 px-4 py-8 sm:px-6 sm:py-10">
+        <!-- Breadcrumb -->
+        <nav aria-label="Breadcrumb" class="mb-4 text-sm text-muted">
+            <ol class="flex flex-wrap items-center gap-2">
+                <li><a href="inicio.html" class="hover:text-barra">Inicio</a></li>
+                <li aria-hidden="true">/</li>
+                <li><a href="materias.html" class="hover:text-barra">Materias</a></li>
+                <li aria-hidden="true">/</li>
+                <li id="breadcrumb-materia" class="font-semibold text-barra" aria-current="page">Materia</li>
+            </ol>
+        </nav>
+
+        //Info general
+        <section class="rounded-2xl bg-white p-6 shadow-sm sm:p-8">
+            <h1 id="titulo-materia" class="text-3xl font-bold text-barra sm:text-4xl">Cargando materia...</h1>
+            <p id="profesor-materia" class="mt-2 text-muted"></p>
+            
+            <div id="info-general" class="mt-6 grid gap-4 sm:grid-cols-3"></div>
+        </section>
+
+        //Materiales
+        <section class="mt-8">
+            <h2 class="mb-4 border-b border-barra/20 pb-3 text-xl font-bold text-barra">Materiales</h2>
+            <div id="lista-materiales" class="flex flex-col gap-3"></div>
+        </section>
+
+        //Foro
+        <section class="mt-8">
+            <h2 class="mb-4 border-b border-barra/20 pb-3 text-xl font-bold text-barra">Foro</h2>
+            <div id="lista-foro" class="flex flex-col gap-3"></div>
+        </section>
+    </main>
+
+    <footer class="mt-auto bg-barra text-white">
+        <div class="mx-auto flex max-w-6xl flex-col items-center gap-4 px-4 py-6 text-center">
+            <h2 class="text-sm">IPAP - Instituto provincial de la administracion publica - 2026</h2>
+            <div class="flex flex-wrap justify-center gap-3">
+                <a href="https://www.facebook.com/ipaprionegro.org/" target="_blank" aria-label="Facebook" class="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-xl hover:bg-verde"><i class="ti ti-brand-facebook"></i></a>
+                <a href="https://x.com/ipaprn" target="_blank" aria-label="X" class="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-xl hover:bg-verde"><i class="ti ti-brand-x"></i></a>
+                <a href="https://www.instagram.com/ipaprn/?hl=es" target="_blank" aria-label="Instagram" class="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-xl hover:bg-verde"><i class="ti ti-brand-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UCJqOSJTZzF0zyltt6C9C2PQ" target="_blank" aria-label="YouTube" class="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-xl hover:bg-verde"><i class="ti ti-brand-youtube"></i></a>
+                <a href="contacto.html" aria-label="Contacto" class="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-xl hover:bg-verde"><i class="ti ti-mail"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="panel-notificaciones" class="hidden fixed inset-0 z-50">
+        <button type="button" id="fondo-notificaciones" data-cerrar aria-label="Cerrar notificaciones" class="absolute inset-0 bg-barra/60"></button>
+        <aside id="caja-notificaciones" class="absolute inset-y-0 right-0 flex w-full max-w-md flex-col bg-white shadow-2xl">
+            <div class="flex items-center justify-between gap-4 border-b border-barra/10 px-5 py-4">
+                <h2 id="titulo-notificaciones" class="text-xl font-bold text-barra">Notificaciones</h2>
+                <button type="button" data-cerrar aria-label="Cerrar" class="flex h-10 w-10 items-center justify-center rounded-full text-barra transition hover:bg-fondo"><i class="ti ti-x text-xl"></i></button>
+            </div>
+            <div class="flex flex-1 flex-col gap-3 overflow-y-auto p-5">
+                <article class="rounded-2xl bg-fondo p-4">
+                    <time datetime="2026-09-15" class="text-xs text-muted">15/09/2026</time>
+                    <h3 class="mt-1 text-base font-semibold text-barra">Nuevo sistema de biblioteca virtual</h3>
+                    <p class="mt-1 text-sm text-muted">A partir de este mes, todo el material bibliográfico del IPAP estará disponible también en formato digital.</p>
+                </article>
+            </div>
+        </aside>
+    </div>
+
+    <script src="js/component/notificaciones.js"></script>
+    <script src="js/datos.js"></script>
+    <script src="js/materia.js"></script>
+</body>
+
+</html>
